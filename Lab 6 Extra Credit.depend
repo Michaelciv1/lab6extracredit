@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1584766720 source:c:\users\michael-gpc\documents\code blocks work\lab 6 extra credit\loshusquare.cpp
+	"LoShuSquare.h"
+	<iostream>
+	<iomanip>
+
+1584763171 c:\users\michael-gpc\documents\code blocks work\lab 6 extra credit\loshusquare.h
+
+1584766705 source:c:\users\michael-gpc\documents\code blocks work\lab 6 extra credit\main.cpp
+	<iostream>
+	"LoShuSquare.h"
+
