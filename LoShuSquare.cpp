@@ -7,7 +7,7 @@ using namespace std;
 LoShuSquare::LoShuSquare(int x){
     SIZE = x;
     for(int i = 0; i < SIZE; i++)
-        square[i] = new int[SIZE];  // allocates elements for each row
+        square[i] = new int[SIZE];
 
     for (int i=0; i < SIZE; i++)
         for (int j=0; j < SIZE; j++)
@@ -17,36 +17,30 @@ LoShuSquare::LoShuSquare(int x){
 LoShuSquare::~LoShuSquare()
 {
     for(int i = 0; i < SIZE; i++){
-        delete [] square[i];   // deletes each row
+        delete [] square[i];
     }
-    delete [] square; // deletes the array of pointers
+    delete [] square;
 }
 
+//Function prints the square. Does not return anything.
 void LoShuSquare::printBoard(){
     int cnt = 0;
     for (int i=0; i < SIZE; i++)
         for (int j=0; j < SIZE; j++){
-        cout << setw(2) << left << square[i][j] << " ";
+        cout << setw(2) << left << square[i][j] << "  ";
         cnt += 1;
         if (cnt % SIZE == 0)
             cout << endl;
     }
 }
 
+//Function fills each individual row/col with the user input value. Does not return anything.
 void LoShuSquare::fill(int row, int col, int value){
     square[row][col] = value;
 }
 
-bool LoShuSquare::isUnique(int value){
-    for (int i=0; i < SIZE; i++)
-        for (int j=0; j<SIZE; j++)
-            if (value == square[i][j]){
-                cout << "Not unique digit, please try again: ";
-                return false;
-            }
-    return true;
-}
 
+//Function checks if the sum of each row is the same. Returns true or false.
 bool LoShuSquare::checkRow(){
     int sum = 0;
     int rowSum = 0;
@@ -64,6 +58,7 @@ bool LoShuSquare::checkRow(){
         return false;
 }
 
+//Function checks if the sum of each column is the same. Returns true or false.
 bool LoShuSquare::checkCol(){
     int sum = 0;
     int rowSum = 0;
@@ -80,7 +75,7 @@ bool LoShuSquare::checkCol(){
     else
         return false;
 }
-
+// Function checks if the sum of the diagonals is equal and returns either true or false
 bool LoShuSquare::checkDiag(){
     int leftDiag = 0;
     int rightDiag = 0;
@@ -97,6 +92,7 @@ bool LoShuSquare::checkDiag(){
         return false;
 }
 
+//Function checks if all previous checks returned true. Returns true or false.
 bool LoShuSquare::check(){
     if (checkCol() && checkRow() && checkDiag())
         return true;

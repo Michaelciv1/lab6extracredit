@@ -4,21 +4,20 @@
 
 class LoShuSquare
 {
+    private:
+        int SIZE;
+        int** square = new int*[SIZE];
+        bool checkRow();
+        bool checkCol();
+        bool checkDiag();
+
     public:
         LoShuSquare(int x);
         ~LoShuSquare();
         bool check();
+        bool validDigits();
         void fill(int row, int col, int value);
         void printBoard();
-        bool isUnique(int value);
-    protected:
-
-    private:
-        int** square = new int*[SIZE];
-        int SIZE;
-        bool checkRow();
-        bool checkCol();
-        bool checkDiag();
 };
 
 #endif // LOSHUSQUARE_H
