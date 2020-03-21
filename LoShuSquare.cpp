@@ -99,4 +99,3 @@ bool LoShuSquare::check(){
     else
         return false;
 }
-

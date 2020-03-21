@@ -15,7 +15,7 @@ class LoShuSquare
         LoShuSquare(int x);
         ~LoShuSquare();
         bool check();
-        bool validDigits();
+        bool checkDuplicate();
         void fill(int row, int col, int value);
         void printBoard();
 };
